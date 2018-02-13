@@ -1,4 +1,4 @@
-# Express-React-Router-Redux 
+# Simple Express-React-Router-Redux template
 
 Based on : (https://github.com/samuxyz/instastack)
 
