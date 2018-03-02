@@ -10,3 +10,12 @@ export const removeCounter = () => ({
   payload: 1
 });
 
+export const addTodo = (text) => ({
+  type: actionType.ADD_TODO,
+  text
+});
+
+export const removeTodo = (index) => ({
+  type: actionType.REMOVE_TODO,
+  index
+});
