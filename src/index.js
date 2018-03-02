@@ -1,14 +1,14 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
+//import { Router, Route, hashHistory } from 'react-router';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import { addCounter } from './actions/'
-import { counter } from './reducers/counter'
+import reducer from './reducer/'
 import App from './components/app'
 
-let store = createStore( counter );
+let store = createStore( reducer );
 
 ReactDOM.render(
 	<Provider store={store}>
