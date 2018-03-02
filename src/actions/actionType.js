@@ -9,4 +9,5 @@
 export const ADD_COUNTER = 'ADD_COUNTER';
 export const REMOVE_COUNTER = 'REMOVE_COUNTER';
 export const ADD_TODO = 'ADD_TODO';
+export const TOGGLE_COMPLETE = 'TOGGLE_COMPLETE';
 export const REMOVE_TODO = 'REMOVE_TODO';

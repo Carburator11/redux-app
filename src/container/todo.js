@@ -6,7 +6,6 @@ class Todo extends React.Component{
 
   constructor(props){
     super(props);
-    this.test = ['test'];
   }
   
 
@@ -15,10 +14,16 @@ class Todo extends React.Component{
         <div>
           <h2>To do List</h2>
             <ul>
-              {this.props.todolist.map(item =>{ 
-                let id = 0;
-                id++;
-                return < TodoItem key = {id} text= {item} /> }) }
+              {this.props.todolist.map((item, index) =>{ 
+                console.log('[Todo]', item, index);
+                return < TodoItem
+                  id= {index}
+                  key = {index} 
+
+                  text= {item.text}
+                  complete = {item.completed}
+                  onTodoClick = {index => dispatch(toggleTodo(index))}
+                /> }) }
             </ul>
         </div>)
   }
@@ -26,11 +31,10 @@ class Todo extends React.Component{
       
 
   
-  
-  
-  function mapStateToProps(state){
-    return {
-        todolist: state.todoReducer,
-    };
-  }
-  export default connect(mapStateToProps)(Todo);
+
+function mapStateToProps(state){
+  return {
+      todolist: state.todoReducer,
+  };
+}
+export default connect(mapStateToProps)(Todo);

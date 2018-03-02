@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addCounter } from '../actions/';
 import { bindActionCreators } from 'redux';
+import { addCounter } from '../actions/';
 
 class AddCounter extends React.Component {
     constructor(props){
@@ -10,12 +10,15 @@ class AddCounter extends React.Component {
 
     render(){
         return(
-            <button onClick = { e => {e.preventDefault();this.props.dispatch(addCounter())}  }>Add Counter
+            <button onClick = { e => {
+                e.preventDefault();
+                this.props.dispatch(addCounter())
+                } 
+            }>
+            Add Counter
             </button>
         )
     }
-
-
 }
 
 function mapDispatchToProps(dispatch) {

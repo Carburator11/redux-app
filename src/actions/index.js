@@ -19,3 +19,8 @@ export const removeTodo = (index) => ({
   type: actionType.REMOVE_TODO,
   index
 });
+
+export const toggleComplete = (index) => ({
+  type: actionType.TOGGLE_COMPLETE,
+  index
+});
