@@ -25,7 +25,7 @@ exports.setupCSS = function(paths) {
       loaders: [
         {
           test: /\.css$/,
-          loaders: ['style-loader', 'css-loader'],
+          loaders: [],
           include: paths
         }
       ]
