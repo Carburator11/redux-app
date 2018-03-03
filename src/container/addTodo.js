@@ -11,14 +11,15 @@ class AddTodo extends React.Component {
     render(){
         let input;
         return(
-            <form onSubmit = { e => {
-                e.preventDefault();
-                console.log('[FORM]', input.value);
-                this.props.dispatch(addTodo(input.value))}
+            <form 
+                onSubmit = { e => {
+                    e.preventDefault();
+                    console.log('[FORM]', input.value);
+                    this.props.dispatch(addTodo(input.value));
+                    }
                 }
             >
-            <input 
-                ref={node => { input = node }}/>
+            <input ref = { node => { input = node } } />
             <button type = 'submit' >Add</button>
             </form>
         )

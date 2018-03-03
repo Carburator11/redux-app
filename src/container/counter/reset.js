@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { resetCounter } from '../../actions/';
 import { bindActionCreators } from 'redux';
-import { addCounter } from '../actions/';
 
-class AddCounter extends React.Component {
+class ResetCounter extends React.Component {
     constructor(props){
         super(props);
     }
@@ -12,16 +12,17 @@ class AddCounter extends React.Component {
         return(
             <button onClick = { e => {
                 e.preventDefault();
-                this.props.dispatch(addCounter())
-                } 
+                this.props.dispatch(resetCounter())
+                }
             }>
-            Add Counter
+            Reset
             </button>
         )
     }
+
 }
 
 function mapDispatchToProps(dispatch) {
-    return { actions: bindActionCreators(addCounter, dispatch) }
+    return { actions: bindActionCreators(resetCounter, dispatch) }
   }
-  export default connect(mapDispatchToProps)(AddCounter);
+  export default connect(mapDispatchToProps)(ResetCounter);

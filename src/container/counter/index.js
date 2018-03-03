@@ -7,7 +7,9 @@ class Counter extends Component {
   }
   render(){
     return (
-        <h2>Counter:  {this.props.count}</h2>
+        <h4 style = { this.props.count < 0 ?{'color': 'red'}:{'color':'inherit'} }>
+        {this.props.count}
+        </h4>
     )
   }
 

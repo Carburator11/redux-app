@@ -6,8 +6,10 @@
  * 
 */
 
-export const ADD_COUNTER = 'ADD_COUNTER';
-export const REMOVE_COUNTER = 'REMOVE_COUNTER';
+export const INCR_COUNTER = 'INCR_COUNTER';
+export const DECR_COUNTER = 'DECR_COUNTER';
+export const RESET_COUNTER = 'RESET_COUNTER';
+
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_COMPLETE = 'TOGGLE_COMPLETE';
 export const REMOVE_TODO = 'REMOVE_TODO';

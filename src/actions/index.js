@@ -1,13 +1,17 @@
 import * as actionType from './ActionType';
 
-export const addCounter = () => ({
-  type: actionType.ADD_COUNTER,
+export const incrementCounter = () => ({
+  type: actionType.INCR_COUNTER,
   payload: 1
 });
 
-export const removeCounter = () => ({
-  type: actionType.REMOVE_COUNTER,
+export const decrementCounter = () => ({
+  type: actionType.DECR_COUNTER,
   payload: 1
+});
+
+export const resetCounter = () => ({
+  type: actionType.RESET_COUNTER,
 });
 
 export const addTodo = (text) => ({

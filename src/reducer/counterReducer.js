@@ -4,12 +4,16 @@ import * as actionType from '../actions/actionType'
 const counterReducer = (state = 0, action) => {
     let newState;
     switch(action.type){
-        case actionType.ADD_COUNTER:
+        case actionType.INCR_COUNTER:
             newState = state + action.payload; 
             return newState
-        case actionType.REMOVE_COUNTER:
+        case actionType.DECR_COUNTER:
             newState = state - action.payload; 
             return newState
+        case actionType.RESET_COUNTER:
+            return 0
+
+
         default:
             return state;
     }
