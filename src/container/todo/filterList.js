@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 let test = [{text: 'Learn Redux basis', completed: true}]
 
 const filterView = (list, filter) => {
-
+ // hum..
 }
 
 
