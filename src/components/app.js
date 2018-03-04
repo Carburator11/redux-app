@@ -1,15 +1,15 @@
-
 import React from 'react'
 
 // Counter
 import Counter from '../container/counter/'
-import Incr from '../container/counter/increment'
-import Decr from '../container/counter/decrement'
-import Reset from '../container/counter/reset'
+import Incr    from '../container/counter/increment'
+import Decr    from '../container/counter/decrement'
+import Reset   from '../container/counter/reset'
 
 // Todo app
-import Todo from '../container/todo'
-import AddTodo from '../container/addTodo'
+import AddTodo from '../container/todo/addTodo'
+import FilterList  from '../container/todo/filterList'
+import FilterLink from '../container/todo/filterLink'
 
 /* This is just a presentationnal Component */
 const App = () => {
@@ -23,8 +23,8 @@ const App = () => {
             <Reset />
             <h2>To do List</h2>
             <AddTodo />
-            <Todo />
-            
+            <FilterList />
+            <FilterLink />
         </div>
     )}
 

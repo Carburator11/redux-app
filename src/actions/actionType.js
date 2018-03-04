@@ -13,3 +13,10 @@ export const RESET_COUNTER = 'RESET_COUNTER';
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_COMPLETE = 'TOGGLE_COMPLETE';
 export const REMOVE_TODO = 'REMOVE_TODO';
+export const FILTER = 'FILTER';
+
+export const filters = {
+    all: 'ALL',
+    completed: 'COMPLETED',
+    done: 'DONE'
+  }

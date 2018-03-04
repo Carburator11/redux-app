@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions/';
+import { addTodo } from '../../actions/';
 import { bindActionCreators } from 'redux';
 
 class AddTodo extends React.Component {
