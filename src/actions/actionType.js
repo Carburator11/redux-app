@@ -18,5 +18,5 @@ export const FILTER = 'FILTER';
 export const filters = {
     all: 'ALL',
     completed: 'COMPLETED',
-    done: 'DONE'
+    active: 'ACTIVE'
   }

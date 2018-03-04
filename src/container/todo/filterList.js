@@ -1,20 +1,44 @@
 import React from 'react'
 import TodoList from './todoList'
 import { connect } from 'react-redux'
+import * as actionType from '../../actions/actionType'
 
-let test = [{text: 'Learn Redux basis', completed: true}]
 
 const filterView = (list, filter) => {
- // hum..
+    let result = []
+    console.log('[Filter-view] Switch?', filter)
+    switch(filter){
+        case actionType.filters.all:
+            return list
+
+        case actionType.filters.completed:
+        console.log('[Filter-view] Switch: compl')
+            list.forEach( el  => {
+                if(el.completed){ result.push(el) }
+            });
+            return result
+
+        case actionType.filters.active:
+        console.log('[Filter-view] Switch: act')
+            list.forEach( el  => {
+                if(!el.completed){ result.push(el) }
+            });
+            return result
+
+        default:
+            return list        
+    }
 }
 
 
 // short version of props.todoList
 const FilterList = ({todolist, filter}) => {
-        // console.log('[FilterList] todos:', todolist, 'filter:', filter)
+        console.log('[FilterList] todos:', todolist, 'filter:', filter)
+        let view = filterView(todolist, filter)
+        console.log('[FilterList] Filtered todos:', view)
         return(
         <div>
-            <TodoList list = { todolist } />
+            <TodoList list = { view } />
         </div>)
     }
 

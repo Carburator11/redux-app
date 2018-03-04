@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect }    from 'react-redux';
-import { filterTodo } from '../../actions/';
+import { filter } from '../../actions/';
 import * as actionType   from '../../actions/actionType';
 import { bindActionCreators } from 'redux';
 
@@ -9,8 +9,9 @@ class FilterLink extends React.Component {
         super(props);
     }
 
-    onTodoClick(e, filter){
-        console.log('[FilterLink]', filter)
+    onTodoClick(e, nextFilter){
+        console.log('[FilterLink]', nextFilter);
+        this.props.dispatch(filter( nextFilter ))
         e.preventDefault();
     }
 
@@ -20,12 +21,12 @@ class FilterLink extends React.Component {
             <h4>Filter:</h4>
             <a href='' onClick= {e => this.onTodoClick(e, actionType.filters.all)}>All</a>,{' '}
             <a href='' onClick= {e => this.onTodoClick(e, actionType.filters.completed)}>Completed</a>,{' '} 
-            <a href='' onClick= {e => this.onTodoClick(e, actionType.filters.done)}>Done</a>
+            <a href='' onClick= {e => this.onTodoClick(e, actionType.filters.active)}>Active</a>
         </span>)
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return { actions: bindActionCreators(filterTodo, dispatch) }
+    return { actions: bindActionCreators(filter, dispatch) }
   }
   export default connect(mapDispatchToProps)(FilterLink);

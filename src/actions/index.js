@@ -29,8 +29,8 @@ export const toggleComplete = (index) => ({
   index
 });
 
-export const filterTodo = (filter) => ({
-  type: actionType.FILTER_TODO,
+export const filter = (filter) => ({
+  type: actionType.FILTER,
   filter
 });
 
