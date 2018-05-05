@@ -7,14 +7,12 @@ const Counter = ({ reduxCount, decrementCounter, incrementCounter}) => (
     <div>
         <h4> Redux counter :  {reduxCount}</h4> 
             <Button 
-                key="decr" 
                 placeholder="-" 
                 onClick={ e => {
                     e.preventDefault();
                     decrementCounter() 
             }} />
             <Button
-                key="incr"
                 placeholder="+"
                 onClick={ e => {
                         e.preventDefault();

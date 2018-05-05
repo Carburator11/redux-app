@@ -33,8 +33,12 @@ class App extends Component{
         return(
             <div style = {{'margin': 40}} >
                 <h1>My redux app</h1>
-                <ReduxCounter className="col-xs-2" />
-                <LocalCounter className="col-xs-2" count={this.state.localCount} incr={this.localStateIncr} decr={this.localStateDecr}/>
+                <ReduxCounter/>
+                <LocalCounter 
+                    count={this.state.localCount}
+                    incr={this.localStateIncr}
+                    decr={this.localStateDecr}
+                />
                 <h4>Total: {localCount + reduxCount}</h4>
                 <Button placeholder="Reset" onClick={this.reset}/>
             </div>)
