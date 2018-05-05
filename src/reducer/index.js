@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import counterReducer from './counterReducer';
-import todoReducer from './todoReducer';
+import reduxCount from './reduxCounter';
 
 const myApp = combineReducers({
-  counterReducer, todoReducer
+  reduxCount
 })
 
 export default myApp
-// Default export, independently from its name, is automatically injected into import variable;

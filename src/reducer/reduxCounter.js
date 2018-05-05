@@ -1,7 +1,6 @@
 import * as actionType from '../actions/actionType'
 
-
-const counterReducer = (state = 0, action) => {
+const reduxCount = (state = 0, action) => {
     let newState;
     switch(action.type){
         case actionType.INCR_COUNTER:
@@ -12,8 +11,6 @@ const counterReducer = (state = 0, action) => {
             return newState
         case actionType.RESET_COUNTER:
             return 0
-
-
         default:
             return state;
     }
@@ -22,6 +19,4 @@ const counterReducer = (state = 0, action) => {
     return state
 }
 
-
-
-export default counterReducer
+export default reduxCount

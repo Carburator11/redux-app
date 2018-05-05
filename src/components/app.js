@@ -1,31 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { resetCounter } from '../actions/';
 
-// Counter
-import Counter from '../container/counter/'
-import Incr    from '../container/counter/increment'
-import Decr    from '../container/counter/decrement'
-import Reset   from '../container/counter/reset'
+import ReduxCounter from './reduxCounter'
+import LocalCounter from './localCounter';
+import Button from './button';
 
-// Todo app
-import AddTodo from '../container/todo/addTodo'
-import FilterList  from '../container/todo/filterList'
-import FilterLink from '../container/todo/filterLink'
+class App extends Component{
+    constructor(props){
+        super(props)
+        this.state={ localCount: 0 }
+        this.localStateIncr = this.localStateIncr.bind(this);
+        this.localStateDecr = this.localStateDecr.bind(this);
+        this.reset = this.reset.bind(this);  
+    }
+    localStateIncr(){
+        this.setState(prevState => ({localCount: prevState.localCount + 1}) )
+    }
 
-/* This is just a presentationnal Component */
-const App = () => {
-    return(
-        <div style = {{'margin': 40}}>
-            <h1>My redux app</h1>
-            <h2>Counter</h2>
-            <Counter/><br />
-            <Incr />
-            <Decr />
-            <Reset />
-            <h2>To do List</h2>
-            <AddTodo />
-            <FilterList />
-            <FilterLink />
-        </div>
-    )}
+    localStateDecr(){
+        this.setState(prevState =>  ({localCount: prevState.localCount - 1}))
+    }
+    reset(){
+        this.setState({localCount: 0}) 
+        this.props.resetCounter();
+    }
 
-export default App
+    render(){
+        const { reduxCount } = this.props;
+        const { localCount } = this.state;
+        return(
+            <div style = {{'margin': 40}} >
+                <h1>My redux app</h1>
+                <ReduxCounter className="col-xs-2" />
+                <LocalCounter className="col-xs-2" count={this.state.localCount} incr={this.localStateIncr} decr={this.localStateDecr}/>
+                <h4>Total: {localCount + reduxCount}</h4>
+                <Button placeholder="Reset" onClick={this.reset}/>
+            </div>)
+    }
+}
+
+const mapStateToProps = ({ reduxCount }) =>  ({ reduxCount })
+const mapDispatchToProps = dispatch => ({ resetCounter: () => dispatch(resetCounter()) })
+
+export default connect(mapStateToProps)(App)
