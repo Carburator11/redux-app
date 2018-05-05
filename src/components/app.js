@@ -39,7 +39,7 @@ class App extends Component{
                     incr={this.localStateIncr}
                     decr={this.localStateDecr}
                 />
-                <h4>Total: {localCount + reduxCount}</h4>
+                <h4>Total: {localCount * reduxCount}</h4>
                 <Button placeholder="Reset" onClick={this.reset}/>
             </div>)
     }
