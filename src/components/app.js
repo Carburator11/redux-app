@@ -22,8 +22,9 @@ class App extends Component{
         this.setState(prevState =>  ({localCount: prevState.localCount - 1}))
     }
     reset(){
+        const { resetCounter } = this.props
         this.setState({localCount: 0}) 
-        this.props.resetCounter();
+        resetCounter();
     }
 
     render(){
@@ -43,4 +44,4 @@ class App extends Component{
 const mapStateToProps = ({ reduxCount }) =>  ({ reduxCount })
 const mapDispatchToProps = dispatch => ({ resetCounter: () => dispatch(resetCounter()) })
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
