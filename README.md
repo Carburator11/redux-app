@@ -1,5 +1,7 @@
 # React-Redux tutorial
 
-Source: https://redux.js.org/basics/example-todo-list
+This repo is my sandbox for React/Redux!
 
-Deployed: https://redux-carb11.herokuapp.com/
+Config (Node, Webpack, BAbel) is based on: https://github.com/samuxyz/instastack
+
+Deployed on: https://redux-carb11.herokuapp.com/
