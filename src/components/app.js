@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { resetCounter } from '../actions/';
+import { multiply } from '../logic/'
 
 import ReduxCounter from './reduxCounter'
 import LocalCounter from './localCounter';
@@ -39,7 +40,7 @@ class App extends Component{
                     incr={this.localStateIncr}
                     decr={this.localStateDecr}
                 />
-                <h4>Total: {localCount * reduxCount}</h4>
+                <h4>Total: {multiply(localCount, reduxCount)}</h4>
                 <Button placeholder="Reset" onClick={this.reset}/>
             </div>)
     }
