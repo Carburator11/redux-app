@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { resetCounter } from '../actions/';
 import { multiply } from '../logic/'
-import { ReduxCounter, LocalCounter, Button } from './' ;
+import { ReduxCounter, LocalCounter, Button, Reference } from './' ;
 
 class App extends Component{
     constructor(props){
@@ -28,6 +28,7 @@ class App extends Component{
     render(){
         const { reduxCount } = this.props;
         const { localCount } = this.state;
+        console.log(reduxCount, localCount, multiply(localCount, reduxCount));
         return(
             <div style = {{'margin': 40}} >
                 <h1>My redux app</h1>
@@ -39,6 +40,7 @@ class App extends Component{
                 />
                 <h4>Total: {multiply(localCount, reduxCount)}</h4>
                 <Button placeholder="Reset" onClick={this.reset}/>
+                {multiply(localCount, reduxCount) === 42 ? <Reference />: null}
             </div>)
     }
 }

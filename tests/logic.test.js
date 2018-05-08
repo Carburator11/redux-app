@@ -9,12 +9,14 @@ test("Check if result is defined", () => {
     const rdm = Math.floor(Math.random()*100)
     const rdm2 = Math.floor(Math.random()*10)
     expect(multiply(rdm, rdm2)).toBeDefined()
+    expect(multiply(0, 0)).toBeDefined()
+    
 });
 
 test("Check if result is an integer", () => {
     const rdm = Math.floor(Math.random()*100)
     const rdm2 = Math.floor(Math.random()*10)
-    expect(multiply(-rdm, rdm2).isNan).toBeFalsy()
+    expect(multiply(-rdm, rdm2).isNaN).toBeFalsy()
 });
 
 test("NaN, Infinity should return undefined", ()=>{
@@ -24,7 +26,7 @@ test("NaN, Infinity should return undefined", ()=>{
     expect(multiply(42, [545])).toBeUndefined();            
     expect(multiply(42, null)).toBeUndefined();
     expect(multiply(42, "lolilol")).toBeUndefined();
-    expect(multiply(42, 4545/0)).toBeUndefined();    
+    expect(multiply(42, 4545/0)).toBeUndefined();
 })
 
 test("One or no argument should return undefined", ()=>{
