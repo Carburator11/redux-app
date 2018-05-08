@@ -1,5 +1,5 @@
 export const multiply = (a, b) => {
-    if(a.isNan || b.isNan){
+    if(!Number.isInteger(a) || !Number.isInteger(b) || !isFinite(a) || !isFinite(b) || !a || !b){
         return;
     }
     return a * b;

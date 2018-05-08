@@ -17,4 +17,21 @@ test("Check if result is an integer", () => {
     expect(multiply(-rdm, rdm2).isNan).toBeFalsy()
 });
 
+test("NaN, Infinity should return undefined", ()=>{
+    expect(multiply(42, undefined)).toBeUndefined();
+    expect(multiply(42, true)).toBeUndefined();
+    expect(multiply(42, {544: 545})).toBeUndefined();
+    expect(multiply(42, [545])).toBeUndefined();            
+    expect(multiply(42, null)).toBeUndefined();
+    expect(multiply(42, "lolilol")).toBeUndefined();
+    expect(multiply(42, 4545/0)).toBeUndefined();    
+})
+
+test("One or no argument should return undefined", ()=>{
+    expect(multiply("lol")).toBeUndefined();
+    expect(multiply(426)).toBeUndefined();    
+    expect(multiply()).toBeUndefined();    
+})
+
+
 

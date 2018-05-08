@@ -18,8 +18,8 @@ test('ReduxCounter should render two <Button /> components', () => {
 
 test('LocalCounter snapshot', ()=>{
     const tree = renderer
-    .create(<LocalCounter />)
-    .toJSON();
+        .create(<LocalCounter />)
+        .toJSON();
     expect(tree).toMatchSnapshot();
 })
 
@@ -27,7 +27,7 @@ test('ReduxCounter snapshot', ()=>{
     const mockStore = configureStore({reduxCount: 0});     
     const store = mockStore({})
     const tree = renderer
-    .create(<ReduxCounter store={store}/>)
-    .toJSON();
+        .create(<ReduxCounter store={store}/>)
+        .toJSON();
     expect(tree).toMatchSnapshot();
 })
