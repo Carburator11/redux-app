@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { resetCounter } from '../actions/';
 import { multiply } from '../logic/'
-
-import ReduxCounter from './reduxCounter'
-import LocalCounter from './localCounter';
-import Button from './button';
+import { ReduxCountern, LocalCounter, Button } from './' ;
 
 class App extends Component{
     constructor(props){
