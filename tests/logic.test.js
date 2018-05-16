@@ -10,7 +10,6 @@ test("Check if result is defined", () => {
     const rdm2 = Math.floor(Math.random()*10)
     expect(multiply(rdm, rdm2)).toBeDefined()
     expect(multiply(0, 0)).toBeDefined()
-    
 });
 
 test("Check if result is an integer", () => {
@@ -34,6 +33,3 @@ test("One or no argument should return undefined", ()=>{
     expect(multiply(426)).toBeUndefined();    
     expect(multiply()).toBeUndefined();    
 })
-
-
-

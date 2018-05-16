@@ -28,7 +28,6 @@ class App extends Component{
     render(){
         const { reduxCount } = this.props;
         const { localCount } = this.state;
-        console.log(reduxCount, localCount, multiply(localCount, reduxCount));
         return(
             <div style = {{'margin': 40}} >
                 <h1>My redux app</h1>
